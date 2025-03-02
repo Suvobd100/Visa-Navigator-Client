@@ -3,7 +3,7 @@ import LatestVisasSection from '../components/LatestVisasSection'
 
 const Home = () => {
   return (
-    <div>Home
+    <div>
       <LatestVisasSection/>
     </div>
   )

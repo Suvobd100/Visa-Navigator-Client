@@ -8,7 +8,7 @@ import MySlider from "../components/mySlider";
 
 const MainLayout = () => {
   return (
-    <div className="font-Poppins bg-amber-200">
+    <div className="font-Poppins bg-stone-200">
       <header>
         <NavTop />
        <NavBar/>
