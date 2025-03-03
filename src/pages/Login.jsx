@@ -16,7 +16,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log('login form:--',email,password);
+    // console.log('login form:--',email,password);
 
 // login by fb with existence user email & password
     userLogin(email, password)
@@ -26,8 +26,7 @@ const Login = () => {
       navigate(location?.state ? location.state : "/");
     })
     .catch((error) => {
-      // alert(error.code);
-      // console.log(error);
+      
       setErr(error.code);
     });
 

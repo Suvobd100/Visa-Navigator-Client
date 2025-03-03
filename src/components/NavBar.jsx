@@ -1,9 +1,16 @@
 import { Link } from "react-router";
+import userIcon from "../assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
+
+  // console.log('Nav bar:---',user);
+
   return (
     <div className="">
-      <div className="navbar bg-black/80 text-white font-bold">
+      <div className="navbar bg-stone-500 text-white font-bold">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,43 +80,42 @@ const NavBar = () => {
             </li>
 
             <li>
-                <Link to="all-visas">All visas</Link>
-              </li>
-              {/* <li>
+              <Link to="all-visas">All visas</Link>
+            </li>
+            {/* <li>
                 <Link to="/priv/vtutorials"> Add Visa</Link>
               </li> */}
-              <li>
-                <Link to="add-visa"> Add Visa</Link>
-              </li>
-              <li>
-                <Link to="My-added-visas"> My added visas</Link>
-              </li>
-              <li>
-                <Link to="My-Visa-applications">My Visa applications</Link>
-              </li>
-              <li>
-                <Link to="register">register</Link>
-              </li>
+            <li>
+              <Link to="add-visa"> Add Visa</Link>
+            </li>
+            <li>
+              <Link to="My-added-visas"> My added visas</Link>
+            </li>
+            <li>
+              <Link to="My-Visa-applications">My Visa applications</Link>
+            </li>
+            {/* <li>
+              <Link to="register">register</Link>
+            </li> */}
           </ul>
         </div>
         <div className="navbar-end gap-2">
-          {/* <div>
+          <div>
             {user && user?.email ? (
-              <Link
-                to="/priv/myprofile"
-                className="flex gap-4 justify-center items-center"
-              >
+              <div className="flex justify-center items-center gap-2">
+                
                 <img
                   className="w-10 h-10 rounded-3xl"
-                  src={user?.photoURL}
+                  src={user?.photoURL ? user.photoURL : userIcon }
                   alt="user pic"
                 />
-                <p className="font-semibold font-comic">{user?.displayName}</p>
-              </Link>
+                <p className="font-semibold font-comic text-white">{user?.email
+                }</p>
+              </div>
             ) : (
               <img className="rounded-full" src={userIcon} alt="" />
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

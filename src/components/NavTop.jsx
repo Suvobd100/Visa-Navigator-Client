@@ -1,9 +1,16 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router";
 
 const NavTop = () => {
   const { user, logOut, updateLanguage } = useContext(AuthContext);
   console.log('NAV top:--',user);
+
+const handleLogout=()=>{
+  logOut();
+  alert('Logout')
+}
+
   return (
     <div className="bg-lime-600 h-10 p-1 text-sky-100 px-4 text-sm">
       <div className="flex justify-between">
@@ -20,9 +27,23 @@ const NavTop = () => {
             <h4> Follow Us </h4>
           </div>
         </div>
-        <div>Login
-          {}
-          
+        <div>
+        {user && user?.email ? (
+            <Link
+              to={"/"}
+              onClick={handleLogout}
+              className="btn btn-outline text-black rounded-noe"
+            >
+              Log-Out
+            </Link>
+          ) : (
+            <Link
+              to={"auth/login"}
+              className="btn btn-outline text-black rounded-noe"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
