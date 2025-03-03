@@ -11,6 +11,8 @@ import MyVisaApplications from "../pages/MyVisaApplications";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "./PrivateRoute";
+import PrivateLayout from "../layouts/PrivateLayout";
 
 const AppRoute = () => {
   return (
@@ -20,10 +22,10 @@ const AppRoute = () => {
         <Route path="/" element={<MainLayout></MainLayout>}>
           <Route index element={<Home/>} />
           <Route path="all-visas" element={<AllVisas/>} />
-          <Route path="add-visa" element={<AddVisa/>} />
-          <Route path="My-added-visas" element={<MyAddedVisas/>} />
-          <Route path="My-Visa-applications" element={<MyVisaApplications/>} />
-          <Route path="register" element={<Register/>} />
+          {/* <Route path="add-visa" element={<AddVisa/>} /> */}
+          {/* <Route path="My-added-visas" element={<MyAddedVisas/>} /> */}
+          {/* <Route path="My-Visa-applications" element={<MyVisaApplications/>} /> */}
+          
           {/* <Route path="lesson" element={<LessonPage/>} /> */}
           {/* <Route path="vtutorials" element={<TutorialAll/>} /> */}
           {/* <Route path="lesson/:id" element={<LessonDetail/>}/> */}
@@ -32,12 +34,14 @@ const AppRoute = () => {
         </Route>
 
         {/* Private route */}
-        {/* <Route path="/priv" element={<PrivateLayout/>}>
-          <Route path="myprofile" element={<PrivateRoute><MyProfile/></PrivateRoute>}/>
-          <Route path="tutorials" element={<PrivateRoute><Tutorials/></PrivateRoute>}/>
-          <Route path="lesson/:id" element={<PrivateRoute><LessonDetail/></PrivateRoute>}/>
-          <Route path="vtutorials" element={<PrivateRoute><TutorialAll/></PrivateRoute>}/>
-        </Route> */}
+        <Route path="/priv" element={<PrivateLayout/>}>
+          <Route path="add-visa" element={<PrivateRoute><AddVisa/></PrivateRoute>}/>
+          <Route path="My-added-visas" element={<PrivateRoute><MyAddedVisas/></PrivateRoute>}/>
+          <Route path="My-Visa-applications" element={<PrivateRoute><MyVisaApplications/></PrivateRoute>}/>
+
+          {/* <Route path="lesson/:id" element={<PrivateRoute><LessonDetail/></PrivateRoute>}/>
+          <Route path="vtutorials" element={<PrivateRoute><TutorialAll/></PrivateRoute>}/> */}
+        </Route>
 
         {/* AuthLayout Routes */}
         <Route path="/auth" element={<AuthLayout />}>
