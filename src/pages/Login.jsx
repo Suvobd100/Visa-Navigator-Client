@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   // import from auth
@@ -23,6 +24,9 @@ const Login = () => {
     .then((result) => {
       const user = result.user;
       setUser(user);
+      // toast messg
+      toast.success('Login successfully done!');
+      
       navigate(location?.state ? location.state : "/");
     })
     .catch((error) => {

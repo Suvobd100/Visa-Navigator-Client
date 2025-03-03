@@ -3,12 +3,12 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
 
 const NavTop = () => {
-  const { user, logOut, updateLanguage } = useContext(AuthContext);
-  console.log('NAV top:--',user);
+  const { user, logOut } = useContext(AuthContext);
+  // console.log('NAV top:--',user);
 
 const handleLogout=()=>{
   logOut();
-  alert('Logout')
+  // alert('Logout')
 }
 
   return (

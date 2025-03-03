@@ -1,7 +1,10 @@
 
+import { useContext } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AuthNav = () => {
+    const { user } = useContext(AuthContext);
   return (
     <div>
       <div className="navbar bg-base-100 flex flex-col">
@@ -14,6 +17,7 @@ const AuthNav = () => {
             A Sim less Visa Application
             </p>
             <p className="btn rounded-2xl"> Home</p>
+            <p className="btn rounded-2xl"> {user?.email}</p>
           </div>
         </Link>
         

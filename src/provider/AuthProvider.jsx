@@ -4,16 +4,17 @@ import { createContext, useEffect, useState } from "react";
 
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { toast } from "react-toastify";
 
 // global value(auth,AuthContext)
 export const AuthContext = createContext();
-// firtebase auth
+// firebase auth call
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   // register user value see
-  console.log("AuthProvider---", user);
+//   console.log("AuthProvider---", user);
 
   // like a time out
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ const AuthProvider = ({ children }) => {
   };
   const logOut = () => {
     setLoading(true);
+    toast.success('Logout successfully done!');
     return signOut(auth);
   };
 
