@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+
 const NavTop = () => {
+  const { user, logOut, updateLanguage } = useContext(AuthContext);
+  console.log('NAV top:--',user);
   return (
     <div className="bg-lime-600 h-10 p-1 text-sky-100 px-4 text-sm">
       <div className="flex justify-between">
@@ -15,7 +20,10 @@ const NavTop = () => {
             <h4> Follow Us </h4>
           </div>
         </div>
-        <div>Login / Register</div>
+        <div>Login
+          {}
+          
+        </div>
       </div>
     </div>
   );

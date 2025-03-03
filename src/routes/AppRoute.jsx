@@ -8,6 +8,9 @@ import AllVisas from "../pages/AllVisas";
 import AddVisa from "../pages/AddVisa";
 import MyAddedVisas from "../pages/MyAddedVisas";
 import MyVisaApplications from "../pages/MyVisaApplications";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import AuthLayout from "../layouts/AuthLayout";
 
 const AppRoute = () => {
   return (
@@ -20,6 +23,7 @@ const AppRoute = () => {
           <Route path="add-visa" element={<AddVisa/>} />
           <Route path="My-added-visas" element={<MyAddedVisas/>} />
           <Route path="My-Visa-applications" element={<MyVisaApplications/>} />
+          <Route path="register" element={<Register/>} />
           {/* <Route path="lesson" element={<LessonPage/>} /> */}
           {/* <Route path="vtutorials" element={<TutorialAll/>} /> */}
           {/* <Route path="lesson/:id" element={<LessonDetail/>}/> */}
@@ -36,10 +40,10 @@ const AppRoute = () => {
         </Route> */}
 
         {/* AuthLayout Routes */}
-        {/* <Route path="/auth" element={<AuthLayout />}>
+        <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<Login/>} />
           <Route path="register" element={<Register/>} />
-        </Route> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

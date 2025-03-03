@@ -45,6 +45,9 @@ const NavBar = () => {
               <li>
                 <Link to="My-Visa-applications">My Visa applications</Link>
               </li>
+              <li>
+                <Link to="register">Register</Link>
+              </li>
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">Lingo Bingo</a> */}
@@ -83,6 +86,9 @@ const NavBar = () => {
               </li>
               <li>
                 <Link to="My-Visa-applications">My Visa applications</Link>
+              </li>
+              <li>
+                <Link to="register">register</Link>
               </li>
           </ul>
         </div>
