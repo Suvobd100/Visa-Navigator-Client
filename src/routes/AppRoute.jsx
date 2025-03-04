@@ -31,7 +31,7 @@ const AppRoute = () => {
 
           {/* <Route path="lesson/:id" element={<LessonDetail/>}/> */}
 
-          <Route path="visa/:id" element={<VisaDetail/>}/>
+          {/* <Route path="visa/:id" element={<VisaDetail/>}/> */}
 
           {/* <Route path="myprofile" element={<MyProfile/>} /> */}
           <Route path="*" element={<NotFound/>} />
@@ -42,6 +42,8 @@ const AppRoute = () => {
           <Route path="add-visa" element={<PrivateRoute><AddVisa/></PrivateRoute>}/>
           <Route path="My-added-visas" element={<PrivateRoute><MyAddedVisas/></PrivateRoute>}/>
           <Route path="My-Visa-applications" element={<PrivateRoute><MyVisaApplications/></PrivateRoute>}/>
+          
+          <Route path="visa/:id" element={<PrivateRoute><VisaDetail/></PrivateRoute>}/>
 
 
           {/* <Route path="lesson/:id" element={<PrivateRoute><LessonDetail/></PrivateRoute>}/>

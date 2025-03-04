@@ -42,7 +42,7 @@ const AllVisas = () => {
   if (!visasData) {
     return <div>No data found </div>;
   }
-  console.log(visasData);
+  // console.log(visasData);
   return (
     <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
       {/* <h2>No of All Visas: {visasData.length}</h2> */}

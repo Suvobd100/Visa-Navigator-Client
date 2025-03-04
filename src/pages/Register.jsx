@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const Register = () => {
   // imp as object by useContext reference
@@ -9,6 +10,7 @@ const Register = () => {
   const [err, setErr] = useState(null);
   //   by ref hook get checkbox data
   const checkboxRef = useRef(null);
+
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +41,7 @@ const Register = () => {
       return;
     }
 
-    console.log({ name, email, photo, password, checkboxRef });
+    // console.log({ name, email, photo, password, checkboxRef });
     // using for fb 2 create new user
     createNewUser(email, password)
       .then((result) => {
@@ -47,11 +49,15 @@ const Register = () => {
         // user data sent AuthProvider
         setUser(user);
         console.log("frm register:--", user);
+        Swal.fire(`${user.email} user created successfully!`);
+        
+        e.target.reset();
+       
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("from register---", errorCode, errorMessage);
+        // console.log("from register---", errorCode, errorMessage);
         setErr(errorMessage);
       });
   };
