@@ -44,8 +44,8 @@ const AllVisas = () => {
   }
   console.log(visasData);
   return (
-    <div className="grid lg:grid-cols-4 grid-cols-1">
-      <h2>No of All Visas: {visasData.length}</h2>
+    <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
+      {/* <h2>No of All Visas: {visasData.length}</h2> */}
       {visasData.map((visa) => (
         <VisaCard key={visa._id} visasData={visa} setVisasData={setVisasData} />
       ))}
