@@ -13,6 +13,7 @@ import Login from "../pages/Login";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "./PrivateRoute";
 import PrivateLayout from "../layouts/PrivateLayout";
+import VisaDetail from "../pages/VisaDetail";
 
 const AppRoute = () => {
   return (
@@ -25,10 +26,13 @@ const AppRoute = () => {
           {/* <Route path="add-visa" element={<AddVisa/>} /> */}
           {/* <Route path="My-added-visas" element={<MyAddedVisas/>} /> */}
           {/* <Route path="My-Visa-applications" element={<MyVisaApplications/>} /> */}
-          
           {/* <Route path="lesson" element={<LessonPage/>} /> */}
           {/* <Route path="vtutorials" element={<TutorialAll/>} /> */}
+
           {/* <Route path="lesson/:id" element={<LessonDetail/>}/> */}
+
+          <Route path="visa/:id" element={<VisaDetail/>}/>
+
           {/* <Route path="myprofile" element={<MyProfile/>} /> */}
           <Route path="*" element={<NotFound/>} />
         </Route>
@@ -38,6 +42,7 @@ const AppRoute = () => {
           <Route path="add-visa" element={<PrivateRoute><AddVisa/></PrivateRoute>}/>
           <Route path="My-added-visas" element={<PrivateRoute><MyAddedVisas/></PrivateRoute>}/>
           <Route path="My-Visa-applications" element={<PrivateRoute><MyVisaApplications/></PrivateRoute>}/>
+
 
           {/* <Route path="lesson/:id" element={<PrivateRoute><LessonDetail/></PrivateRoute>}/>
           <Route path="vtutorials" element={<PrivateRoute><TutorialAll/></PrivateRoute>}/> */}

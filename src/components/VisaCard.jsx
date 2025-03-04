@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const VisaCard = ({ visasData, setVisasData }) => {
   console.log(visasData);
   const {
@@ -23,11 +25,7 @@ const VisaCard = ({ visasData, setVisasData }) => {
           <h2 className="card-title text-3xl">{name}</h2>
         </div>
         <figure className="px-10 pt-4">
-          <img
-            src={photo}
-            alt={name}
-            className="rounded-xl w-[70%] "
-          />
+          <img src={photo} alt={name} className="rounded-xl w-[70%] " />
         </figure>
         <div className="card-body items-center px-4">
           <ul>
@@ -54,7 +52,10 @@ const VisaCard = ({ visasData, setVisasData }) => {
             </li>
           </ul>
           <div className="card-actions mt-4">
-            <button className="btn  bg-stone-300">See Details</button>
+          {/* to={`/priv/lesson/${lessondata.categoryId}`} */}
+            <Link to={`/visa/${_id}`}>
+              <button className="btn  bg-stone-300">See Details</button>
+            </Link>
           </div>
         </div>
       </div>
