@@ -55,7 +55,7 @@ const Register = () => {
        
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
         // console.log("from register---", errorCode, errorMessage);
         setErr(errorMessage);
@@ -131,7 +131,7 @@ const Register = () => {
             </button>
           </div>
           <p className="text-center">
-            Allready Have An Account?{" "}
+            Already Have An Account?{" "}
             <Link to={"/auth/login"} className="text-green-500">
               Login
             </Link>{" "}
