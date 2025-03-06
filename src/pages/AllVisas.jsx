@@ -11,9 +11,9 @@ const AllVisas = () => {
     // Fetch data from the backend API
     const fetchData = async () => {
       try {
-          const response = await fetch("http://localhost:5000/visas"); //from db 
+          const response = await fetch("https://visa-nav-app-server.vercel.app/visas"); //from db 
         if (!response.ok) {
-          throw new Error("Failed to fetch city data");
+          throw new Error("Failed to fetch visas data");
         }
         const data = await response.json();
         setVisasData(data); // Set fetched data

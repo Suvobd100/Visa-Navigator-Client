@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
   const { user } = useContext(AuthContext);
   const lastLogInTime = user.metadata.lastSignInTime;
-  console.log(user.metadata.lastSignInTime);
-  console.log(user);
+  // console.log(user.metadata.lastSignInTime);
+  // console.log(user);
 
   const {
     _id,
@@ -49,7 +49,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     };
 
     // Update data in the database
-    // fetch(`http://localhost:5000/visa`, {
+    // fetch(`https://visa-nav-app-server.vercel.app/visa`, {
     //   method: "PUT",
     //   headers: {
     //     "Content-type": "application/json",
@@ -70,7 +70,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     //       });
 
 
-    fetch(`http://localhost:5000/visas`, {
+    fetch(`https://visa-nav-app-server.vercel.app/visas`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -79,9 +79,9 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log('patch data res from back:---',data);
+        // console.log('patch data res from back:---',data);
         if (data.modifiedCount > 0) {
-          console.log("successfully updated by email");
+          // console.log("successfully updated by email");
           Swal.fire({
             title: "Success!",
             position: "top-start",
@@ -92,7 +92,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
 
 
           // Fetch updated data from the database
-          fetch("http://localhost:5000/visas")
+          fetch("https://visa-nav-app-server.vercel.app/visas")
             .then((res) => res.json())
             .then((updatedData) => {
               setVisasData(updatedData); // Update the parent state with the new data
@@ -125,7 +125,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
   // single delete
 
   const handleDelete=(id)=>{
-    console.log('Del ID:--',id);
+    // console.log('Del ID:--',id);
 
     // del with swal start
 
@@ -140,7 +140,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
   }).then((result) => {
       if (result.isConfirmed) {
 
-          fetch(`http://localhost:5000/visa/${id}`, {
+          fetch(`https://visa-nav-app-server.vercel.app/visa/${id}`, {
               method: 'DELETE'
           })
               .then(res => res.json())

@@ -52,7 +52,7 @@ const AddVisa = () => {
     // console.log("Add visa form value:---", newVisa);
 
     // send data to the server and database
-    fetch("http://localhost:5000/visa", {
+    fetch("https://visa-nav-app-server.vercel.app/visa", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -62,7 +62,7 @@ const AddVisa = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          console.log("successfully added");
+          // console.log("successfully added");
           Swal.fire({
             title: "Success!",
             text: "Visa added successfully",

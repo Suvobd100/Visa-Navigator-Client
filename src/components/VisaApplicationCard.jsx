@@ -17,10 +17,10 @@ const VisaApplicationCard = ({ setFilteredVisas, filteredVisas, visa }) => {
     createAt,
   } = visa;
 
-  console.log("visa app data:-", filteredVisas);
+  // console.log("visa app data:-", filteredVisas);
 
   const handleDelete = (id) => {
-    console.log("Del ID:--", id);
+    // console.log("Del ID:--", id);
 
     // del with swal start
 
@@ -34,7 +34,7 @@ const VisaApplicationCard = ({ setFilteredVisas, filteredVisas, visa }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/visa/${id}`, {
+        fetch(`https://visa-nav-app-server.vercel.app/visa/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
