@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-const VisaCard = ({ visasData, setVisasData }) => {
+const VisaCard = ({ visasData}) => {
 //   console.log(visasData);
   const {
     _id,

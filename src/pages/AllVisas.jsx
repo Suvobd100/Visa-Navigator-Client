@@ -11,12 +11,12 @@ const AllVisas = () => {
     // Fetch data from the backend API
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/visas");
+          const response = await fetch("http://localhost:5000/visas"); //from db 
         if (!response.ok) {
           throw new Error("Failed to fetch city data");
         }
         const data = await response.json();
-        setVisasData(data); // Set the fetched data
+        setVisasData(data); // Set fetched data
       } catch (err) {
         setError(err.message); // Set error message
       } finally {

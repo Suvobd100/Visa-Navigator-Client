@@ -4,8 +4,8 @@ import Swal from "sweetalert2";
 
 const SingleVisaCard = ({ visa }) => {
   const { user } = useContext(AuthContext);
-  console.log(user);
-  console.log("single visa:--", user.metadata.lastSignInTime);
+  // console.log(user);
+  // console.log("single visa:--", user.metadata.lastSignInTime);
   const lastLogintime = user.metadata.lastSignInTime;
 
   // {
