@@ -122,6 +122,52 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     console.log("Updated visasData:", vData);
   }, [vData]);
 
+  // single delete
+
+  const handleDelete=(id)=>{
+    console.log('Del ID:--',id);
+
+    // del with swal start
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+      if (result.isConfirmed) {
+
+          fetch(`http://localhost:5000/visa/${id}`, {
+              method: 'DELETE'
+          })
+              .then(res => res.json())
+              .then(data => {
+                  // console.log(data);
+                  if (data.deletedCount) {
+                      Swal.fire({
+                          title: "Deleted!",
+                          text: "Your file has been deleted.",
+                          icon: "success"
+                      });
+
+                      // update the loaded coffee state
+                      const remainingVisa = visasData.filter(visa => visa._id !== _id);
+                      setVisasData(remainingVisa);
+
+                  }
+              })
+
+      }
+  });
+
+
+    // end del
+
+  }
+
   return (
     <div>
       <div className="card bg-stone-100 w-full shadow-sm">
@@ -274,7 +320,10 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
               </div>
             </dialog>
 
-            <button className="btn bg-stone-300" disabled={!isUserAuthorized}>
+            <button 
+            onClick={()=>{handleDelete(_id)}}
+            className="btn bg-stone-300"
+             disabled={!isUserAuthorized}>
               Delete
             </button>
           </div>
