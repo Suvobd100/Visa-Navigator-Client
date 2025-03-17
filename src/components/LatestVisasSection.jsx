@@ -1,6 +1,6 @@
 const LatestVisasSection = () => {
   return (
-    <div className="grid grid-cols-3 space-y-10 ">
+    <div className="grid lg:grid-cols-3 grid-cols-1 lg:space-y-10 ">
       {/* 1 card */}
       <div className="card bg-stone-100 w-96 shadow-sm">
         <div className="mt-3 ml-10">

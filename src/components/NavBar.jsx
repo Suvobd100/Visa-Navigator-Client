@@ -44,16 +44,16 @@ const NavBar = () => {
                 <Link to="/priv/vtutorials"> Add Visa</Link>
               </li> */}
               <li>
-                <Link to="add-visa"> Add Visa</Link>
+                <Link to="/priv/add-visa"> Add Visa</Link>
               </li>
               <li>
-                <Link to="My-added-visas"> My added visas</Link>
+                <Link to="/priv/My-added-visas"> My added visas</Link>
               </li>
               <li>
-                <Link to="My-Visa-applications">My Visa applications</Link>
+                <Link to="/priv/My-Visa-applications">My Visa applications</Link>
               </li>
               <li>
-                <Link to="register">Register</Link>
+                <Link to="/priv/register">Register</Link>
               </li>
             </ul>
           </div>

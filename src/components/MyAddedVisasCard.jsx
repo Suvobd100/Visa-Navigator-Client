@@ -49,7 +49,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     };
 
     // Update data in the database
-    // fetch(`https://visa-nav-app-server.vercel.app/visa`, {
+    // fetch(`https://visa-server-one.vercel.app/visa`, {
     //   method: "PUT",
     //   headers: {
     //     "Content-type": "application/json",
@@ -70,7 +70,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
     //       });
 
 
-    fetch(`https://visa-nav-app-server.vercel.app/visas`, {
+    fetch(`https://visa-server-one.vercel.app/visas`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -92,7 +92,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
 
 
           // Fetch updated data from the database
-          fetch("https://visa-nav-app-server.vercel.app/visas")
+          fetch("https://visa-server-one.vercel.app/visas")
             .then((res) => res.json())
             .then((updatedData) => {
               setVisasData(updatedData); // Update the parent state with the new data
@@ -140,7 +140,7 @@ const MyAddedVisasCard = ({ vData, setVisasData, visasData }) => {
   }).then((result) => {
       if (result.isConfirmed) {
 
-          fetch(`https://visa-nav-app-server.vercel.app/visa/${id}`, {
+          fetch(`https://visa-server-one.vercel.app/visa/${id}`, {
               method: 'DELETE'
           })
               .then(res => res.json())

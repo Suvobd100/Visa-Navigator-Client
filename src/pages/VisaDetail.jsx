@@ -14,7 +14,7 @@ const VisaDetail = () => {
       // Fetch data from the backend API
       const fetchData = async () => {
         try {
-          const response = await fetch("https://visa-nav-app-server.vercel.app/visas");
+          const response = await fetch("https://visa-server-one.vercel.app/visas");
           if (!response.ok) {
             throw new Error("Failed to fetch visa data");
           }

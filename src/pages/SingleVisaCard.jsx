@@ -70,7 +70,7 @@ const SingleVisaCard = ({ visa }) => {
     console.log(updateClientVisaInfo);
 
     // send data to the server and database
-    fetch(`https://visa-nav-app-server.vercel.app/visa/${_id}`, {
+    fetch(`https://visa-server-one.vercel.app/visa/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

@@ -34,7 +34,7 @@ const VisaApplicationCard = ({ setFilteredVisas, filteredVisas, visa }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://visa-nav-app-server.vercel.app/visa/${id}`, {
+        fetch(`https://visa-server-one.vercel.app/visa/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
