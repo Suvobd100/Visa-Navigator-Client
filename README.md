@@ -1,12 +1,30 @@
-# React + Vite
+# App Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application built with React, Vite, TailwindCSS, and Firebase. This project is designed to be fast, responsive, and easy to maintain.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19**: Built with the latest version of React for a modern development experience.
+- **Vite**: Fast and optimized development and production builds.
+- **TailwindCSS**: Utility-first CSS framework for rapid UI development.
+- **Firebase**: Backend services for authentication, database, and more.
+- **React Router**: Client-side routing for seamless navigation.
+- **Animate.css**: Smooth animations for a polished user experience.
+- **Swiper**: Touch-enabled sliders and carousels.
+- **SweetAlert2**: Beautiful and customizable alerts.
+- **React Toastify**: Notifications and toasts for user feedback.
+- **DaisyUI**: TailwindCSS component library for pre-built UI components.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm (v9 or higher recommended)
+
+### Installation
+
+1. Clone the repository:
+ 
+   git clone https://github.com/Suvobd100/Visa-Navigator-Client
+   
